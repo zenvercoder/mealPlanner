@@ -26,7 +26,9 @@ Working in IntelliJ? -> `⌘ + ,` -> Languages and Frameworks -> Node.js and NPM
 ### Resources
 
 [HTML forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms)
+
 [Express Routes and Controllers](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes)
+
 [10 CSS HTML Form Designs](https://www.sanwebe.com/2014/08/css-html-forms-designs)
 
 ### Next Steps
@@ -37,3 +39,6 @@ Working in IntelliJ? -> `⌘ + ,` -> Languages and Frameworks -> Node.js and NPM
 
 * get zipcode to get appropriate flyer for user
 
+### Current Status:
+              
+Able to get data from Sprouts weekly specials flyer
