@@ -1,4 +1,11 @@
-<h1>{{title}}</h1>
-<p>Making meal planning easier... one baby step at a time</p>
-
-<a href="/specials">specials</a>
+<div class="form">
+    <h2>Meal Planner</h2>
+    <form id="myForm" action="../flyerDataService.js" method="post">
+        <input type="text" name="field1" placeholder="Name" />
+        <input type="email" name="field2" placeholder="Email" />
+        <input type="text" id="zipcode" name="zipcode" placeholder="Zipcode">
+        <a href="/specials">
+            <input type="button" value="Find Your Weekly Specials!" />
+        </a>
+    </form>
+</div>

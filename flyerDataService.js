@@ -1,7 +1,8 @@
 var jsdom = require('jsdom');
+
 var service = {
-    getFlyerData: function(){
-        jsdom.env({
+    getFlyerData: function(callback){
+        return jsdom.env({
             url: "https://www.sprouts.com/web/guest/specials/-/flyer/store/275",
             scripts: ["http://code.jquery.com/jquery.js"],
             done: function (err, window) {
@@ -42,13 +43,10 @@ var service = {
                 console.log("Got flyerData, still need to get it delivered to the route");
                 console.log(JSON.stringify(items, '\t'));
                 // res.send(items);
-                // return items;
+                callback(items);
             }
         });
     }
 };
-
-
-
 
 module.exports = service;

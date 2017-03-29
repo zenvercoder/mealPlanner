@@ -1,2 +1,2 @@
-Weekly meal planning easier and more family friendly
+Family friendly meal planner
 

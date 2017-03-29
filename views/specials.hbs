@@ -1,4 +1,7 @@
 <h1>{{title}}</h1>
-ohai
 
-{{flyerData}}
+<ul>
+    {{#each flyerData}}
+        <li>{{this.name}}</li>
+    {{/each}}
+</ul>
