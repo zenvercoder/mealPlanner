@@ -42,3 +42,7 @@ Working in IntelliJ? -> `⌘ + ,` -> Languages and Frameworks -> Node.js and NPM
 ### Current Status:
               
 Able to get data from Sprouts weekly specials flyer
+
+immediately executed function expression (iefe) = `(function(){
+  
+})();` 
