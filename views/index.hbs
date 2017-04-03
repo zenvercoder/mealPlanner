@@ -1,11 +1,7 @@
 <div class="form">
     <h2>Meal Planner</h2>
-    <form id="myForm" action="../flyerDataService.js" method="post">
-        <input type="text" name="field1" placeholder="Name" />
-        <input type="email" name="field2" placeholder="Email" />
-        <input type="text" id="zipcode" name="zipcode" placeholder="Zipcode">
-        <a href="/specials">
-            <input type="button" value="Find Your Weekly Specials!" />
-        </a>
+    <form action="/scripts/searchForm.js">
+        <input type="text" id="zipcode" name="zipcode" placeholder="Zipcode" autofocus>
+        <input type="submit" id="searchButton" value="Find Your Store!"/>
     </form>
 </div>

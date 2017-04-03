@@ -9,11 +9,11 @@ router.get('/', function (req, res, next) {
 });
 
 /* GET specials. */
-router.get('/specials', function (req, res, next) {
+router.get('/specials/:storeid', function (req, res, next) {
 
-    // var storeid = req.params.value();
+    var storeid = req.params.storeid;
 
-    var flyerData = flyerDataService.getFlyerData(function (items) {
+    var flyerData = flyerDataService.getFlyerData(storeid, function (items) {
         console.log("callback items invoked" + items);
         res.render('specials', {
             title: 'Yay, Here are your sale items!',
@@ -23,14 +23,22 @@ router.get('/specials', function (req, res, next) {
 
 });
 
-router.get('/stores', function (req, res, next) {
-    var storesList = flyerDataService.getStoresList(function (items) {
+router.get('/stores/:zipcode', function (req, res, next) {
+    console.log("req.params.zipcode= " + req.params.zipcode);
+    var zipcode = req.params.zipcode;
+
+    var storesList = flyerDataService.getStoresList(zipcode, function (items) {
         console.log("callback items invoked" + items);
         res.render('stores', {
             title: 'Yay, Here are your stores!',
             storesList: items
         });
     });
+});
+
+router.get('/stores', function (req, res, next) {
+
+
 });
 
 module.exports = router;
