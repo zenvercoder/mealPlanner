@@ -1,15 +1,14 @@
 body {
-    padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
     text-decoration: none;
-    color: #3498db;
+    color: #804000;
 }
 
 a:hover {
-    color: #2980b9;
+    color: #b35900;
 }
 
 .form {
@@ -23,28 +22,8 @@ a:hover {
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
 
 }
-
-.form h2 {
-    background: #4D4D4D;
-    text-transform: uppercase;
-    font-family: 'Open Sans Condensed', sans-serif;
-    color: #797979;
-    font-size: 18px;
-    font-weight: 100;
-    padding: 20px;
-    margin: -30px -30px 30px -30px;
-}
-
 .form input[type="text"],
-.form input[type="date"],
-.form input[type="datetime"],
-.form input[type="email"],
-.form input[type="number"],
-.form input[type="search"],
-.form input[type="time"],
-.form input[type="url"],
 .form input[type="zipcode"],
-.form input[type="password"],
 .form textarea,
 .form select {
     box-sizing: border-box;
@@ -55,6 +34,7 @@ a:hover {
     width: 100%;
     padding: 7px;
     border: none;
+    color: #75757c;
     border-bottom: 1px solid #ddd;
     background: transparent;
     margin-bottom: 10px;
@@ -77,48 +57,25 @@ a:hover {
     overflow: hidden;
 }
 
-.form input[type="button"],
-.form input[type="submit"] {
-    -moz-box-shadow: inset 0 1px 0 0 #45D6D6;
-    -webkit-box-shadow: inset 0 1px 0 0 #45D6D6;
-    box-shadow: inset 0 1px 0 0 #45D6D6;
-    background-color: #2CBBBB;
-    border: 1px solid #27A0A0;
-    display: inline-block;
-    cursor: pointer;
-    color: #FFFFFF;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 14px;
-    padding: 8px 18px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.form input[type="button"]:hover,
-.form input[type="submit"]:hover {
-    background: linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
-    background-color: #34CACA;
-}
-
 .flex-container {
     display: flex;
     flex-wrap: wrap;
 }
 .demo-card-square.mdl-card {
     color: #804000;
-    flex-direction: row;
+    flex-direction: column;
     width: 250px;
     height: 350px;
     margin: 10px;
-    box-shadow: 2px 2px 5px 2px rgba(128, 64, 0, 0.55);
-    background: url(../images/paper.jpg) repeat;
+    box-shadow: 2px 1px 8px 0px rgba(128, 64, 0, 0.55);
+    /*background: url(../images/paper.jpg) repeat;*/
 }
 .demo-card-square > .mdl-card__title > h3 {
     color: #804000;
     margin: -50px 0 10px 15px;
     width: 100%
 }
-h1.padding {
+h2.padding {
     color: #804000;
 }
 .mdl-card__actions > .mdl-button {
@@ -127,4 +84,19 @@ h1.padding {
 
 .padding {
     padding: 25px 0 0 16px;
+}
+.demo-card-wide.mdl-card {
+    width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('../images/unsplash.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent {
+    color: white;
 }

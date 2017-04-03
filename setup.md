@@ -37,7 +37,13 @@ Working in IntelliJ? -> `⌘ + ,` -> Languages and Frameworks -> Node.js and NPM
 
 ### Goals
 
-* get zipcode to get appropriate flyer for user
+✓ get zipcode to get appropriate flyer for user
+
+* search by product name 
+
+* group flyer data by department
+
+[unsplash veggie photo](https://unsplash.com/collections/347380/veggies?photo=8manzosDSGM)
 
 ### Current Status:
               

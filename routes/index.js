@@ -16,7 +16,8 @@ router.get('/specials/:storeid', function (req, res, next) {
     var flyerData = flyerDataService.getFlyerData(storeid, function (items) {
         console.log("callback items invoked" + items);
         res.render('specials', {
-            title: 'Yay, Here are your sale items!',
+            title: 'Meal Planner',
+            h2: 'Yay, Here are your sale items!',
             flyerData: items
         });
     });
@@ -30,7 +31,8 @@ router.get('/stores/:zipcode', function (req, res, next) {
     var storesList = flyerDataService.getStoresList(zipcode, function (items) {
         console.log("callback items invoked" + items);
         res.render('stores', {
-            title: 'Yay, Here are your stores!',
+            title: 'Meal Planner',
+            h2: 'Yay, Here are your stores!',
             storesList: items
         });
     });

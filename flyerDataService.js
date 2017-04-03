@@ -10,6 +10,8 @@ var service = {
                 var jQuery = $;
                 var document = window.document;
 
+
+
                 // calling it statically.
                 var arr = [].slice.call(window.document.scripts);
 
