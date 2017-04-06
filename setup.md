@@ -23,6 +23,10 @@ Working in IntelliJ? -> `⌘ + ,` -> Languages and Frameworks -> Node.js and NPM
 
 * morgan: HTTP request logger middleware for node.js
 
+immediately executed function expression (iefe) = `(function(){
+  
+})();`
+
 ### Resources
 
 [HTML forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms)
@@ -39,7 +43,7 @@ Working in IntelliJ? -> `⌘ + ,` -> Languages and Frameworks -> Node.js and NPM
 
 ✓ get zipcode to get appropriate flyer for user
 
-* search by product name 
+* search by product name (es6 findwhere, maybe use regex). do this client side, use jquery to hide elements that don't match (select all the items, look at the title and if it doens't match regex, hide it)
 
 * group flyer data by department
 
@@ -49,6 +53,3 @@ Working in IntelliJ? -> `⌘ + ,` -> Languages and Frameworks -> Node.js and NPM
               
 Able to get data from Sprouts weekly specials flyer
 
-immediately executed function expression (iefe) = `(function(){
-  
-})();` 
