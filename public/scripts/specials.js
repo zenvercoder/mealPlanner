@@ -1,7 +1,11 @@
 var displaySearch = function () {
     $('.hideSearch').show();
-    var wahtever = $('.hideSearch');
-    console.log(wahtever);
 };
 
-$(document).ready(displaySearch);
+
+var displaySort = function () {
+    $('.hideSort').show();
+};
+
+$(document).ready(displaySearch, displaySort);
+

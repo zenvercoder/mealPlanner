@@ -10,8 +10,6 @@ var service = {
                 var jQuery = $;
                 var document = window.document;
 
-
-
                 // calling it statically.
                 var arr = [].slice.call(window.document.scripts);
 
@@ -50,8 +48,6 @@ var service = {
     getStoresList: function (zipcode, callback) {
         return jsdom.env({
             url: "https://www.sprouts.com/stores/search/-/store-search/view?_storesearch_WAR_storelocatorportlet_latitude=&_storesearch_WAR_storelocatorportlet_longitude=&zip=" + zipcode,
-
-            // url: "https://www.sprouts.com/stores/search",
             scripts: ["http://code.jquery.com/jquery.js"],
             done: function (err, window) {
                 var $ = window.$;
