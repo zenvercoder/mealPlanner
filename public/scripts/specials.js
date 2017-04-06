@@ -1,11 +1,6 @@
-var displaySearch = function () {
-    $('.hideSearch').show();
+var displayHidden = function () {
+    $('.hide').show();
 };
 
-
-var displaySort = function () {
-    $('.hideSort').show();
-};
-
-$(document).ready(displaySearch, displaySort);
+$(document).ready(displayHidden);
 

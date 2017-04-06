@@ -100,3 +100,7 @@ h2.padding {
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent {
     color: white;
 }
+
+.hide {
+    display: none;
+}

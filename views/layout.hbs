@@ -16,14 +16,17 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">{{title}}</span>
+            <a href="/" style="color: white;" id="tt1">
+                <span class="mdl-layout-title">{{title}}</span>
+                <span class="mdl-tooltip hide" data-mdl-for="tt1">Find another store</span>
+            </a>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class="mdl-navigation__link" href="https://github.com/zenvercoder/mealPlanner">GitHub Repo</a>
-                <i class="material-icons hideSort" style="display: none;">sort</i>
-                <i class="material-icons hideSearch" style="display: none;">search</i>
+                <!--<a class="mdl-navigation__link" href="https://github.com/zenvercoder/mealPlanner">GitHub Repo</a>-->
+                <i class="material-icons hide">sort</i>
+                <i class="material-icons hide">search</i>
             </nav>
         </div>
     </header>
