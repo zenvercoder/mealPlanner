@@ -2,5 +2,11 @@ var displayHidden = function () {
     $('.hide').show();
 };
 
-$(document).ready(displayHidden);
+$('.hide-field').hide();
 
+
+$( ".showSearch" ).click(function() {
+    $( ".search-field" ).toggle("slow");
+});
+
+$(document).ready(displayHidden);
