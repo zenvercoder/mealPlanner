@@ -58,16 +58,26 @@ a:hover {
     overflow: hidden;
 }
 
-.flex-container {
+.flex-container,
+.results-contianer {
     display: flex;
     flex-wrap: wrap;
+}
+
+.flyer-item,
+.recipe-item {
+    position: relative;
+}
+
+.recipe-item {
+    display: inline-flex;
 }
 
 .demo-card-square.mdl-card {
     color: #804000;
     flex-direction: column;
-    width: 250px;
-    height: 350px;
+    width: 210px;
+    height: 250px;
     margin: 10px;
     box-shadow: 2px 1px 8px 0px rgba(128, 64, 0, 0.55);
     /*background: url(../images/paper.jpg) repeat;*/
@@ -101,8 +111,19 @@ h2.padding {
 
 .demo-card-wide > .mdl-card__title {
     color: #fff;
-    height: 176px;
+    height: 200px;
     background: url('../images/unsplash.jpg') center / cover;
+}
+
+.demo-card-wide > .raspberries {
+    color: #fff;
+    height: 200px;
+    background: url('../images/raspberries.jpg') center / cover;
+}
+
+.flyer-item:hover .action,
+.recipe-item:hover .action {
+    height: 100%;
 }
 
 .demo-card-wide > .mdl-card__menu {
@@ -111,6 +132,35 @@ h2.padding {
 
 .mdl-button.mdl-js-button.mdl-button--raised.mdl-button--accent {
     color: white;
+}
+
+.action {
+    display: block;
+}
+
+.action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.flyer-item .flyer-content:hover .action .action-content {
+    height: 100%;
+}
+
+.flyer-item .flyer-content:hover .action .action-content .mdl-card__supporting-text{
+    color: #804000;
+}
+
+.action-content button {
+    align-content: center;
+    margin-left: 5px;
 }
 
 .hide {
@@ -130,8 +180,19 @@ h2.padding {
 }
 .specials-header {
     margin-bottom: 15px;
-    /*background-color: rgb(255,171,64);*/
     background-color: rgb(159, 113, 96);
-    /*background-color: transparent;*/
 }
 
+.material-icons:active {
+    background: none;
+    text-shadow: none;
+}
+
+.recipe-photo {
+    height: 176px;
+    width: 176px;
+}
+
+.brown {
+    color: #804000;
+}

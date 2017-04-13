@@ -35,21 +35,42 @@ immediately executed function expression (iefe) = `(function(){
 
 [10 CSS HTML Form Designs](https://www.sanwebe.com/2014/08/css-html-forms-designs)
 
-### Next Steps
+### Credits
 
-// routes/index.js -> flyerData is undefined
+[unsplash veggie photo](https://unsplash.com/collections/347380/veggies?photo=8manzosDSGM)
+
+[raspberries](https://unsplash.com/collections/146843/food-and-nutrition?photo=FjjUVn_KHLU) by [glencarrie](https://unsplash.com/@glencarrie)
+
 
 ### Goals
 
 ✓ get zipcode to get appropriate flyer for user
 
+✓ get recipies
+
+* get nutrition info
+
 * search by product name (es6 findwhere, maybe use regex). do this client side, use jquery to hide elements that don't match (select all the items, look at the title and if it doens't match regex, hide it)
+
+* add to grocery list
+
+* add to meal plan
+
+### Stretch/extras
+
+* icon hover no blue highlights
 
 * group flyer data by department
 
-[unsplash veggie photo](https://unsplash.com/collections/347380/veggies?photo=8manzosDSGM)
+* get sale valid dates (action -> action-acontent -> p)
+
+* fix recipies alignment
 
 ### Current Status:
               
 Able to get data from Sprouts weekly specials flyer
+
+add html search input + button to dom
+
+### Next Steps
 

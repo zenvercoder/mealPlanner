@@ -10,9 +10,10 @@ var service = {
                 var jQuery = $;
                 var document = window.document;
 
+
+
                 // calling it statically.
                 var arr = [].slice.call(window.document.scripts);
-
                 // assigning it to jsonp, it's javascript. you have to evaluate it
                 // the result of it being evaluated
                 var jsonp = arr.find(function (script) {
@@ -34,12 +35,15 @@ var service = {
                         return {
                             name: current.serializable.name,
                             imageURL: link.concat(current.serializable.imageURL),
+                            tag: current.serializable.tagImage,
                             salePrice: current.serializable.price.serializable.salePrice,
                             saleQuantity: current.serializable.price.serializable.saleQuantity,
                             saleUom: current.serializable.price.serializable.saleUom
                         }
                     });
+
                 console.log(JSON.stringify(items, '\t'));
+
                 // res.send(items);
                 callback(items);
             }

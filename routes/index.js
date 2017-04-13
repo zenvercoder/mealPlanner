@@ -39,4 +39,13 @@ router.get('/specials/:storeid', function (req, res, next) {
 
 });
 
+/* GET recipies search page. */
+router.get('/recipies', function (req, res, next) {
+
+        res.render('recipies', {
+            title: 'Meal Planner',
+            h2: 'Search for Recipies',
+        });
+});
+
 module.exports = router;
