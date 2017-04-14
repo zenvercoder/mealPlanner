@@ -4,19 +4,30 @@
         <span class="mdl-layout-title">{{h2}}</span>
     </div>
 </header>
+<div id="map-bounds" north="{{mapRectangle.north}}"
+     south="{{mapRectangle.south}}"
+     east="{{mapRectangle.east}}"
+     west="{{mapRectangle.west}}">
 
-<div class="flex-container">
-{{#each storesList}}
-    <div class="demo-card-square mdl-card mdl-shadow--2dp">
-        <div class="mdl-card__supporting-text">
-            <a href="{{this.url}}">
-                {{this.name}}
-            </a>
-            <br>
-            Store # {{this.id}}
-            {{this.phone}}
-            {{this.address}}
-        </div>
-    </div>
-{{/each}}
 </div>
+
+<div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+<script>
+    function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+        });
+
+        var mapBoundsElement = document.getElementById("map-bounds");
+        var bounds = new google.maps.LatLngBounds();
+
+        bounds.extend(new google.maps.LatLng(mapBoundsElement.getAttribute("north"), mapBoundsElement.getAttribute("west")));
+        bounds.extend(new google.maps.LatLng(mapBoundsElement.getAttribute("south"), mapBoundsElement.getAttribute("east")));
+
+        map.fitBounds(bounds);
+    }
+    initMap();
+</script>
+

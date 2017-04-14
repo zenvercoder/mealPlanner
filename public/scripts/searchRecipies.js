@@ -18,7 +18,7 @@ var searchRecipies = function (ingredient) {
             alert(err);
         },
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("X-Mashape-Authorization", "YOUR_API_KEY"); // Enter here your Mashape key
+            xhr.setRequestHeader("X-Mashape-Authorization", "bwNDzcAbRImshqjSRgWGE7IpwFdDp1OU6QBjsn3iTv2Z5XQ3oL"); // Enter here your Mashape key
         }
     });
     return output;

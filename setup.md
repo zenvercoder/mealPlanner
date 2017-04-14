@@ -48,7 +48,9 @@ immediately executed function expression (iefe) = `(function(){
 
 ✓ get recipies
 
-* get nutrition info
+✓ be able to actually search for recipies, not just get pumpkin
+
+* get nutrition info - max api call limit reached
 
 * search by product name (es6 findwhere, maybe use regex). do this client side, use jquery to hide elements that don't match (select all the items, look at the title and if it doens't match regex, hide it)
 
@@ -72,12 +74,12 @@ immediately executed function expression (iefe) = `(function(){
               
 Able to get data from Sprouts weekly specials flyer
 
-add html search input + button to dom
+Single map instead of a lot of individual store cards - in progress
 
 ### Next Steps
 
 * api key/.env
 
-✓ be able to actually search for recipies, not just get pumpkin
-
 * move add to grocery list/meal plan button to bottom of div
+
+* Add markers to stores map

@@ -50,6 +50,7 @@ var service = {
         });
     },
     getStoresList: function (zipcode, callback) {
+
         return jsdom.env({
             url: "https://www.sprouts.com/stores/search/-/store-search/view?_storesearch_WAR_storelocatorportlet_latitude=&_storesearch_WAR_storelocatorportlet_longitude=&zip=" + zipcode,
             scripts: ["http://code.jquery.com/jquery.js"],
@@ -57,6 +58,14 @@ var service = {
                 var $ = window.$;
                 var jQuery = $;
                 var document = window.document;
+
+                // start with opposites, going to do comparisons and replace values with data
+                var mapRectangle = {
+                    south: 90, // minLat
+                    north: -90, // maxLat
+                    west: 180, // minLon
+                    east: -180 // maxLon
+                };
 
                 var items = [];
 
@@ -66,14 +75,20 @@ var service = {
 
                     store.id = value.attributes["data-storeid"].value;
                     store.url = "/specials/" + store.id;
+
                     store.latitude = value.attributes["data-latitude"].value;
                     store.longitude = value.attributes["data-longitude"].value;
+                    // check map rectangle
+                    if(store.latitude > mapRectangle.north) mapRectangle.north = store.latitude;
+                    if(store.latitude < mapRectangle.south) mapRectangle.south = store.latitude;
+                    if(store.longitude > mapRectangle.east) mapRectangle.east = store.longitude;
+                    if(store.longitude < mapRectangle.west) mapRectangle.west = store.longitude;
+
+                    store.name = $(value).find(".store-finder-store-summary-name > h3 > a").text().slice(0, nameIndex);
+                    // console.log("store.name= " + store.name);
 
                     var nameIndex = $(value).find(".store-finder-store-summary-name > h3 > a").text().lastIndexOf(")");
                     nameIndex = nameIndex - 12;
-
-                    store.name = $(value).find(".store-finder-store-summary-name > h3 > a").text().slice(0, nameIndex);
-                    console.log("store.name= " + store.name);
 
                     var phoneIndex = $(value).find(".store-finder-summary-address").text().lastIndexOf("-");
                     phoneIndex = phoneIndex - 7;
@@ -83,9 +98,11 @@ var service = {
 
                     // console.log("store.id = " + store.id + '\n', "store.latitude = " + store.latitude + '\n', "store.longitude = " + store.longitude + '\n', "store.name = " + store.name + '\n', "store.phone = " + store.phone + '\n', store.address);
                     items.push(store);
-
+                    // console.log("items= " + items);
                 });
-                callback(items);
+
+                // add min, max values
+                callback(items, mapRectangle);
             }
         });
     }

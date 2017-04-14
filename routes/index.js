@@ -13,12 +13,12 @@ router.get('/stores/:zipcode', function (req, res, next) {
     console.log("req.params.zipcode= " + req.params.zipcode);
     var zipcode = req.params.zipcode;
 
-    var storesList = flyerDataService.getStoresList(zipcode, function (items) {
-        console.log("callback items invoked" + items);
+    var storesList = flyerDataService.getStoresList(zipcode, function (items, mapRectangle) {
         res.render('stores', {
             title: 'Meal Planner',
             h2: 'Yay, Here are your stores!',
-            storesList: items
+            storesList: items,
+            mapRectangle: mapRectangle,
         });
     });
 });
@@ -29,7 +29,7 @@ router.get('/specials/:storeid', function (req, res, next) {
     var storeid = req.params.storeid;
 
     var flyerData = flyerDataService.getFlyerData(storeid, function (items) {
-        console.log("callback items invoked" + items);
+        // console.log("callback items invoked" + items);
         res.render('specials', {
             title: 'Meal Planner',
             h2: 'Yay, Here are your sale items!',

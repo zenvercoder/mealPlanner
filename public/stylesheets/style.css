@@ -196,3 +196,9 @@ h2.padding {
 .brown {
     color: #804000;
 }
+
+#map {
+    height: 350px;
+    width: 350px;
+    background-color: grey;
+}
