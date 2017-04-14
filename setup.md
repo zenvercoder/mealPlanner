@@ -58,6 +58,8 @@ immediately executed function expression (iefe) = `(function(){
 
 ### Stretch/extras
 
+* save user info for meal plans liked/disliked
+
 * icon hover no blue highlights
 
 * group flyer data by department
@@ -74,3 +76,8 @@ add html search input + button to dom
 
 ### Next Steps
 
+* api key/.env
+
+✓ be able to actually search for recipies, not just get pumpkin
+
+* move add to grocery list/meal plan button to bottom of div

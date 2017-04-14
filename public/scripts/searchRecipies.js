@@ -3,14 +3,16 @@ var hideForm = function () {
 };
 
 $("#searchButton").click(function () {
+    var ingredient = $("#spoonacular-ingredients").val();
+    console.log(ingredient);
     hideForm();
-    searchRecipies().then(getRecipes);
+    searchRecipies(ingredient).then(showRecipes);
 });
 
 
-var searchRecipies = function () {
+var searchRecipies = function (ingredient) {
     var output = $.ajax({
-        url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + 'pumpkin', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+        url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + ingredient, // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
         dataType: 'json',
         error: function (err) {
             alert(err);
@@ -22,18 +24,22 @@ var searchRecipies = function () {
     return output;
 };
 
-var getRecipes = function (recipesList) {
-    // console.log(recipesList);
+var showRecipes = function (recipesList) {
+    console.log(recipesList);
     var recipiesArr = recipesList;
 
     var resultsContainer = $(".results-container");
     var recipeElement = $(".recipe-item");
 
     recipiesArr.forEach(function (recipe) {
+
         var newRecipeElement = recipeElement.clone();
+        // console.log("newRecipeElement= " + newRecipeElement);
+
         newRecipeElement.find(".mdl-card__title").find("img").attr("src", recipe.image);
-        newRecipeElement.find(".mdl-card__supporting-text").append(recipe.title);
-        newRecipeElement.find(".action-content.mdl-card__supporting-text").append(recipe.likes);
+        newRecipeElement.find(".title").append(recipe.title);
+        newRecipeElement.find(".likes").append(recipe.likes);
+        newRecipeElement.find(".usedIngredientCount").append(recipe.usedIngredientCount);
 
         resultsContainer.append(newRecipeElement);
         newRecipeElement.show();
