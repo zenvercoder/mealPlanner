@@ -65,11 +65,13 @@ a:hover {
 }
 
 .flyer-item,
-.recipe-item {
+.recipe-item,
+.store {
     position: relative;
 }
 
-.recipe-item {
+.recipe-item,
+.store {
     display: inline-flex;
 }
 
@@ -197,8 +199,19 @@ h2.padding {
     color: #804000;
 }
 
+.map-wrapper .demo-card-wide {
+    color: #fff;
+    height: 400px;
+}
+
+.map-wrapper {
+    width: 100vw;
+    height: 400px;
+    margin: 10px auto 10px auto;
+}
+
 #map {
-    height: 350px;
-    width: 350px;
+    height: 85%;
+    width: 100%;
     background-color: grey;
 }

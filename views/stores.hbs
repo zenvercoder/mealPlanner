@@ -4,15 +4,57 @@
         <span class="mdl-layout-title">{{h2}}</span>
     </div>
 </header>
-<div id="map-bounds" north="{{mapRectangle.north}}"
-     south="{{mapRectangle.south}}"
-     east="{{mapRectangle.east}}"
-     west="{{mapRectangle.west}}">
+<div class="flex-container">
 
+    <div id="map-bounds" north="{{mapRectangle.north}}"
+         south="{{mapRectangle.south}}"
+         east="{{mapRectangle.east}}"
+         west="{{mapRectangle.west}}">
+    </div>
+
+    <div class="map-wrapper demo-card-wide mdl-card mdl-shadow--2dp">
+        <div id="map"></div>
+
+        <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect show-cards">
+                Click to View Individual Store Cards
+            </button>
+        </div>
+    </div>
+
+    <div class="stores-list hide">
+        {{#each storesList}}
+            <div class="demo-card-square mdl-card mdl-shadow--2dp store">
+
+                <div class="mdl-card__title mdl-card--expand">
+
+                </div>
+
+                <div class="mdl-card__supporting-text">
+                    <a href="{{this.url}}" class="url">
+                        {{this.name}}
+                    </a>
+                    <br>
+                    <div class="store-id hide">
+                        {{this.id}}
+                    </div>
+
+                    <br>
+                    <div class="store-phone">
+                        Phone # {{this.phone}}
+                    </div>
+                    <br>
+                    <div class="store-address">
+                        {{this.address}}
+                    </div>
+                    <div class="location hide">{{this.latitude}}, {{this.longitude}}</div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
 </div>
 
-<div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS-API_KEY"></script>
 <script>
     function initMap() {
 
@@ -27,7 +69,60 @@
         bounds.extend(new google.maps.LatLng(mapBoundsElement.getAttribute("south"), mapBoundsElement.getAttribute("east")));
 
         map.fitBounds(bounds);
+
+        var stores = [];
+
+        $(".store").each(function (index, value) {
+            var store = {};
+            store.latitude = parseFloat($(value).find(".mdl-card__supporting-text > .location").text().slice(0, 9));
+            store.longitude = parseFloat($(value).find(".mdl-card__supporting-text > .location").text().slice(11));
+            store.name = $(value).find(".mdl-card__supporting-text > a").text();
+            store.phone = $(value).find(".mdl-card__supporting-text > .store-phone").text();
+            store.address = $(value).find(".mdl-card__supporting-text > .store-address").text();
+            store.id = $(value).find(".mdl-card__supporting-text > .store-id").text();
+            store.url = "/specials/" + store.id;
+            console.log(store.id, store.url);
+            stores.push(store);
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        stores.forEach(function (store) {
+            for (var key in store) {
+                if (store.hasOwnProperty(key)) {
+
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(store.latitude, store.longitude),
+                        draggable: true,
+                        animation: google.maps.Animation.DROP,
+                        map: map
+                    });
+
+                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                        return function () {
+                            infowindow.setContent(
+                                    '<a href=" ' + store.url + ' " ' + 'class="url">'
+                                    + store.name
+                                    + '</a>'
+                                    + '<br>'
+                                    + store.phone + '<br>' + store.address);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+            }
+        });
     }
+
     initMap();
+
+    $(".show-cards").click(function () {
+        $(".map-wrapper").hide();
+        $(".stores-list").show();
+        $(".show-map").show();
+    });
+
 </script>
 
