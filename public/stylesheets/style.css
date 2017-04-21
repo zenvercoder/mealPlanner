@@ -12,7 +12,7 @@ a:hover {
 }
 
 .form {
-    font-family: 'Open Sans Condensed', arial, sans;
+    /*font-family: 'Open Sans Condensed', arial, sans;*/
     width: 500px;
     padding: 30px;
     background: #FFFFFF;
@@ -20,7 +20,6 @@ a:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.22);
-
 }
 
 .form input[type="text"],
@@ -82,7 +81,6 @@ a:hover {
     height: 250px;
     margin: 10px;
     box-shadow: 2px 1px 8px 0px rgba(128, 64, 0, 0.55);
-    /*background: url(../images/paper.jpg) repeat;*/
 }
 
 .demo-card-square > .mdl-card__title > h3 {
@@ -92,10 +90,6 @@ a:hover {
 }
 
 h2.padding {
-    color: #804000;
-}
-
-.brown {
     color: #804000;
 }
 
@@ -111,7 +105,7 @@ h2.padding {
     width: 512px;
 }
 
-.demo-card-wide > .mdl-card__title {
+.form > .mdl-card__title {
     color: #fff;
     height: 200px;
     background: url('../images/unsplash.jpg') center / cover;
@@ -152,17 +146,19 @@ h2.padding {
     transition: .5s ease;
 }
 
-.flyer-item .flyer-content:hover .action .action-content {
-    height: 100%;
+.flyer-item .flyer-content:hover .action {
+    height: 250px;
 }
 
 .flyer-item .flyer-content:hover .action .action-content .mdl-card__supporting-text{
     color: #804000;
 }
 
-.action-content button {
+.action-content button{
     align-content: center;
     margin-left: 5px;
+    position: absolute;
+    bottom: 5px;
 }
 
 .hide {
@@ -175,6 +171,18 @@ h2.padding {
 
 .white {
     color: white;
+}
+
+.brown {
+    color: #804000;
+}
+
+.block {
+    display: block;
+}
+
+.center {
+    align-items:center;
 }
 
 .white-border {
@@ -195,10 +203,6 @@ h2.padding {
     width: 176px;
 }
 
-.brown {
-    color: #804000;
-}
-
 .map-wrapper .demo-card-wide {
     color: #fff;
     height: 400px;
@@ -214,4 +218,50 @@ h2.padding {
     height: 85%;
     width: 100%;
     background-color: grey;
+}
+
+.demo-card-wide.grocery-list {
+    max-width:440px;
+    width: 440px;
+    margin: 10px;
+}
+
+.demo-card-wide > .groceries {
+    color: #fff;
+    height: 200px;
+}
+
+.demo-card-wide > .groceries {
+    color: #fff;
+    height: 200px;
+}
+
+.demo-card-wide > .groceries.mdl-card__title {
+    color: #fff;
+    height: 60px;
+    background-color: rgb(159, 113, 96);
+}
+
+.demo-card-wide > .item {
+    height: 100px;
+}
+
+.item {
+    display:flex;
+    align-items:center;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+    border-bottom:0;
+}
+
+.details {
+    text-align: center;
+    font-size: 15px;
+}
+
+.recipe-list ul > .grocery-list-item li {
+    margin-bottom: 15px;
+    list-style: none;
 }
