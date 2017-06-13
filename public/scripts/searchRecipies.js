@@ -34,7 +34,6 @@ var showRecipes = function (recipesList) {
     recipiesArr.forEach(function (recipe) {
 
         var newRecipeElement = recipeElement.clone();
-        // console.log("newRecipeElement= " + newRecipeElement);
 
         newRecipeElement.find(".mdl-card__title").find("img").attr("src", recipe.image);
         newRecipeElement.find(".title").append(recipe.title);
@@ -46,5 +45,3 @@ var showRecipes = function (recipesList) {
     });
     resultsContainer.show();
 };
-
-

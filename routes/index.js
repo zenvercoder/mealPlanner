@@ -5,7 +5,7 @@ var flyerDataService = require('../flyerDataService');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Meal Planner'});
+    res.render('index', {title: 'Weekly Specials'});
 });
 
 router.get('/stores/:zipcode', function (req, res, next) {
@@ -15,7 +15,7 @@ router.get('/stores/:zipcode', function (req, res, next) {
 
     var storesList = flyerDataService.getStoresList(zipcode, function (items, mapRectangle) {
         res.render('stores', {
-            title: 'Meal Planner',
+            title: 'Weekly Specials',
             h2: 'Yay, Here are your stores!',
             storesList: items,
             mapRectangle: mapRectangle,
@@ -31,7 +31,7 @@ router.get('/specials/:storeid', function (req, res, next) {
     var flyerData = flyerDataService.getFlyerData(storeid, function (items) {
         // console.log("callback items invoked" + items);
         res.render('specials', {
-            title: 'Meal Planner',
+            title: 'Weekly Specials',
             h2: 'Yay, Here are your sale items!',
             flyerData: items
         });
@@ -43,7 +43,7 @@ router.get('/specials/:storeid', function (req, res, next) {
 router.get('/recipies', function (req, res, next) {
 
         res.render('recipies', {
-            title: 'Meal Planner',
+            title: 'Weekly Specials',
             h2: 'Search for Recipies',
         });
 });

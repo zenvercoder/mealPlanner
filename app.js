@@ -9,6 +9,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+// dotenv.load();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,4 +1,4 @@
-Family friendly meal planner
+Weekly Specials
 
 [Live Link](https://familyfriendlymealplanner.herokuapp.com/)
 

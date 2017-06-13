@@ -41,6 +41,8 @@ immediately executed function expression (iefe) = `(function(){
 
 [raspberries](https://unsplash.com/collections/146843/food-and-nutrition?photo=FjjUVn_KHLU) by [glencarrie](https://unsplash.com/@glencarrie)
 
+[recipe photo](https://unsplash.com/collections/426527/food?photo=YT_DCMps5Wg) by [Anastasia Zhenina](https://unsplash.com/collections/426527/food?photo=YT_DCMps5Wg) 
+
 
 ### Goals
 
@@ -83,3 +85,9 @@ Single map instead of a lot of individual store cards - in progress
 * move add to grocery list/meal plan button to bottom of div
 
 * Add markers to stores map
+
+* click button, add item to dom so it is visible
+
+* use jquery to generate recipe
+
+* then submit
